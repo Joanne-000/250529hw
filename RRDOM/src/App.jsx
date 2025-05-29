@@ -12,22 +12,16 @@ const App = () => {
       _id: 1,
       boxSize: 'Small',
       boxOwner: 'Alex',
-    },
-    {
-      _id: 2,
-      boxSize: 'Medium',
-      boxOwner: 'Jessica',
     }])
 
   return (
     <>
     <NavBar />
-    <HomePage />
 
     <Routes>
       <Route path="/" element={<HomePage mailboxes={mailboxes}/>} />
       <Route path="/mailboxes" element={<Mailboxes mailboxes={mailboxes}/>} />
-      <Route path="/new-mailbox" element={<NewMailbox setMailbox={setMailbox}/>} />
+      <Route path="/new-mailbox" element={<NewMailbox mailboxes={mailboxes} setMailbox={setMailbox}/>} />
       <Route path="/mailboxes/:mailboxId" element={<MailboxDetails mailboxes={mailboxes}/>} />
     </Routes>
     </>
